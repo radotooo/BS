@@ -11,12 +11,11 @@ describe('Blog Spot', () => {
     cy.visit('https://template1.booost.bg/feello/index');
   });
 
-  it('profile badge should have size 80x80', () => {
-    cy.get('[data-cy=profile-badge] > img')
-      .invoke('outerWidth')
-      .should('be.eq', 80);
+  it.only('profile badge should have size 80x80', () => {
+    cy.get('[data-cy=profile-badge]').invoke('outerWidth').should('be.eq', 80);
   });
 
+  // cant get this to work please help
   it.only('should show menu on hover', () => {
     cy.get('[data-cy="home-btn"]').trigger('mouseover');
     cy.get('[data-cy="home-btn-menu"]')
